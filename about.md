@@ -18,7 +18,7 @@ I am zw1tt3r1on and I am currently working as a security consultant at ███
 - [HackTheBox](https://app.hackthebox.com/profile/958566)
 - [TryHackMe](https://tryhackme.com/p/zw1tt3r1on)
 
-## find -type f -name "Certifications"
+## # find -type f -name "Certifications"
 
 - eLearnSecurity Web Application Penetration Tester (eWPT)
 - eLearnSecurity Web Application Penetration Tester Extreme (eWPTXv2)
