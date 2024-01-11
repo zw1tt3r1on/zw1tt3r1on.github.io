@@ -8,10 +8,15 @@ permalink: /about/
 
 I am zw1tt3r1on and I am currently working as a security consultant at [[REDACTED]]. I have 3 years of experience in doing website application penetration testing and security assessments. This blog is simply my digital playground where I share my adventures and experiences in doing bug bounty, penetration testing and as well as playing capture the flags with an aim to educate, inspire, and ignite people's passion for cybersecurity.
 
-# Bug Bounty Platforms
+## Bug Bounty Platforms
 
-[HackerOne](https://hackerone.com/zw1tt3r1on)
-[Bugcrowd](https://bugcrowd.com/zw1tt3r1on)
+- [HackerOne](https://hackerone.com/zw1tt3r1on)
+- [Bugcrowd](https://bugcrowd.com/zw1tt3r1on)
+
+## Capture The Flags
+
+- [HackTheBox](https://app.hackthebox.com/profile/958566)
+- [TryHackMe](https://tryhackme.com/p/zw1tt3r1on)
 
 ## Certifications
 
