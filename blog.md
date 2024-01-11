@@ -1,7 +1,7 @@
 ---
 title: /blog
 layout: page
-permalink: /blog
+permalink: /blog/
 ---
 
 {%- if site.posts.size > 0 -%}
@@ -14,3 +14,5 @@ permalink: /blog
     {%- endfor -%}
   </ul>
 {%- endif -%}
+
+# test blog
