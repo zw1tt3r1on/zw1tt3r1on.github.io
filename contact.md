@@ -12,7 +12,9 @@ permalink: /contact
   <textarea rows="5" id="message" name="message" placeholder="message:" autocomplete="off"></textarea>
   <input type="submit" value="[ submit ]">
 </form>
-
+<br>
+<br>
+<br>
 You may also send me an email at zw1tt3r1on@proton.me
 
 <br /><br />
