@@ -13,4 +13,6 @@ permalink: /contact
   <input type="submit" value="[ submit ]">
 </form>
 
-<br /><br />(This is a demo site, the form doesn't work - If you want to implement a form on your site, you need an external service)
+You may also send me an email at zw1tt3r1on@proton.me
+
+<br /><br />
