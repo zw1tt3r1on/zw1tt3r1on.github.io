@@ -8,8 +8,8 @@ permalink: /
  _      /| _|_ _|_ _) ._ /|  _  ._  
  /_ \/\/ |  |_  |_ _) |   | (_) | | 
                                     
-</pre>
-<font size=5>
+
+<font size=3>
                                                                                
 Welcome to zw1tt3r1on's landing page (GNU/Linux 5.4.0-48-generic x86_64)
  * Blog:	https://zw1tt3r1on.github.io/blog
@@ -35,4 +35,4 @@ Last login: Fri Jun 12 1987 02:32:58 from 10.0.0.1
 $
  </font>
 
-
+</pre>
