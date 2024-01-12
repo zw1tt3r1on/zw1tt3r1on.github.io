@@ -24,10 +24,10 @@ Nmap done: 1 IP address (1 host up) scanned in 13.82 seconds
 
 We can see that we have port 22, 80 and 55555, but port 80 is filtered so we cannot visit this even if we try, so we first try visiting port 55555.
 
-![Alt text](<../assets/uploads/htb-sau/2024-01-12 13_29_55.png>)
+![Alt text](/assets/uploads/htb-sau/2024-01-12 13_29_55.png)
 
 We see that this is Request Baskets and upon searching about this, we find that there is an SSRF issue here that we can leverage.
 We can forward port 80 to this request baskets. 
 
-![Alt text](<../assets/uploads/htb-sau/2024-01-12 13_39_13.png>)
+![Alt text](/assets/uploads/htb-sau/2024-01-12 13_39_13.png)
 
