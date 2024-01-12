@@ -13,8 +13,5 @@ permalink: /contact
   <input type="submit" value="[ submit ]">
 </form>
 <br>
-<br>
-<br>
 You may also send me an email at zw1tt3r1on@proton.me
-
 <br /><br />
