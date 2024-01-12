@@ -14,5 +14,3 @@ permalink: /blog/
     {%- endfor -%}
   </ul>
 {%- endif -%}
-
-# test blog
