@@ -10,6 +10,7 @@ categories: CTF
 Let us start with our nmap scan
 
 ---
+
 Starting Nmap 7.94 ( https://nmap.org ) at 2024-01-12 00:26 EST
 Nmap scan report for 10.10.11.224
 Host is up (0.058s latency).
@@ -20,6 +21,7 @@ PORT      STATE    SERVICE
 55555/tcp open     unknown
 
 Nmap done: 1 IP address (1 host up) scanned in 13.82 seconds
+
 ---
 
 We can see that we have port 22, 80 and 55555, but port 80 is filtered so we cannot visit this even if we try, so we first try visiting port 55555.
@@ -27,7 +29,8 @@ We can see that we have port 22, 80 and 55555, but port 80 is filtered so we can
 ![Alt text](/assets/uploads/htb-sau/2024-01-12 13_29_55.png)
 
 We see that this is Request Baskets and upon searching about this, we find that there is an SSRF issue here that we can leverage.
-We can forward port 80 to this request baskets. 
+We can forward port 80 to this request basket. 
 
 ![Alt text](/assets/uploads/htb-sau/2024-01-12 13_39_13.png)
 
+Now we can visit visit http://10.10.11.224:55555/d0kb80v and see that port 80 is running Maltrail v0.53. With some searching, we can see that there is an RCE vulnerability on this 
