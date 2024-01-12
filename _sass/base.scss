@@ -53,6 +53,12 @@ footer { margin-bottom: 20px; }
 .menu ul li a { text-decoration: none;  color: var(--text-color); }
 .menu ul li a:hover { text-decoration: none; color: var(--background-color); background-color: var(--base-color); }
 
+#ssh_banner {
+
+  font-size: 16px;
+  
+}
+
 /**
  * Form
  */
