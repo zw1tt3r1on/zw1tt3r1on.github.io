@@ -5,7 +5,7 @@ date:   2024-01-12
 categories: CTF
 ---
 
-<h1>Recon</h1>
+# > Recon
 
 Let us start with our nmap scan
 
@@ -36,7 +36,7 @@ We can forward port 80 to this request basket.
 Now we can visit visit http://sau.htb:55555/mhvi3fu and see that port 80 is running Maltrail v0.53. With some searching, we can see that there is an RCE vulnerability on this https://github.com/spookier/Maltrail-v0.53-Exploit
 
 
-<h1>Exploitation</h1>
+# > Exploitation
 Let us clone this repository, setup a listener on port 111 and run the exploit to get a reverse shell
 
 ---
@@ -57,7 +57,7 @@ python3 -c 'import pty; pty.spawn("/bin/bash")'
 
 ---
 
-<h1>Privilege Escalation</h1>
+# > Privilege Escalation
 
 Running sudo -l reveals that we can run sudo on /usr/bin/systemctl status trail.service
 
