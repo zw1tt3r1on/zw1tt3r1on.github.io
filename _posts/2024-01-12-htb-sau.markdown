@@ -37,7 +37,7 @@ Now we can visit visit http://sau.htb:55555/mhvi3fu and see that port 80 is runn
 
 
 # > Exploitation
-Let us clone this repository, setup a listener on port 111 and run the exploit to get a reverse shell
+Let us clone this repository, setup a listener on port 1111 and run the exploit to get a reverse shell
 
 ---
 
