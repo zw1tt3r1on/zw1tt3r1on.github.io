@@ -4,7 +4,6 @@ layout: page
 permalink: /
 ---
 
-<pre>
  <font size=1 style="line-height:0.5">
 ███████╗██╗    ██╗ ██╗████████╗████████╗██████╗ ██████╗  ██╗ ██████╗ ███╗   ██╗
 ╚══███╔╝██║    ██║███║╚══██╔══╝╚══██╔══╝╚════██╗██╔══██╗███║██╔═══██╗████╗  ██║
@@ -36,6 +35,5 @@ To see these additional updates run: apt list --upgradable
 Last login: Fri Jun 12 1987 02:32:58 from 10.0.0.1
 $
  </font>
-</pre>
 
 
