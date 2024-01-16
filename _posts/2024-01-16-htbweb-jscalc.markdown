@@ -19,13 +19,15 @@ Looking at the source code we can verify that we are indeed just passing everyth
 ```
 
 <SNIP>
-        <div class="card">
-            <div class="card-body">
-                <div class="card-text">
-                    <center><h3>A super secure Javascript calculator with the help of <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval"><b>eval()</b></b></a>  🤮</h3></center>
-                </div>
-                <br>
-                <form class='form' role='form' id='form'>
+    <div class="card">
+        <div class="card-body">
+            <div class="card-text">
+                <center><h3>A super secure Javascript calculator with the help of 
+                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/
+                Reference/Global_Objects/eval"><b>eval()</b></b></a></h3></center>
+            </div>
+            <br>
+            <form class='form' role='form' id='form'>
 <SNIP>
 
 ```
