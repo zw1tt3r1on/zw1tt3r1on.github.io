@@ -16,7 +16,7 @@ Upon visiting the IP address and port provided, we are given a super secure java
 
 Looking at the source code we can verify that we are indeed just passing everything to the eval() function.
 
----
+```
 
 <SNIP>
         <div class="card">
@@ -28,11 +28,11 @@ Looking at the source code we can verify that we are indeed just passing everyth
                 <form class='form' role='form' id='form'>
 <SNIP>
 
----
+```
 
 We can further find that this is running Node.js from the package.json file
 
----
+```
 
 {
 	"name": "jscalc",
@@ -54,7 +54,7 @@ We can further find that this is running Node.js from the package.json file
 	}
 }
 
----
+```
 
 With this, we need to find a way to some perform command injection or file read on the host system so that we can read the flag.txt
 
