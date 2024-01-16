@@ -17,7 +17,8 @@ Upon visiting the IP address and port provided, we are given a super secure java
 Looking at the source code we can verify that we are indeed just passing everything to the eval() function.
 
 ---
-<-SNIP->
+
+<SNIP>
         <div class="card">
             <div class="card-body">
                 <div class="card-text">
@@ -25,12 +26,11 @@ Looking at the source code we can verify that we are indeed just passing everyth
                 </div>
                 <br>
                 <form class='form' role='form' id='form'>
-<-SNIP->
+<SNIP>
+
 ---
 
-
 We can further find that this is running Node.js from the package.json file
-
 
 ---
 
@@ -53,7 +53,6 @@ We can further find that this is running Node.js from the package.json file
 		"express": "^4.17.1"
 	}
 }
-
 
 ---
 
