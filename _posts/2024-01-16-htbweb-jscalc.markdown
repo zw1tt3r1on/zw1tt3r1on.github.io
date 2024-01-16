@@ -28,7 +28,9 @@ Looking at the source code we can verify that we are indeed just passing everyth
 <-SNIP->
 ---
 
+
 We can further find that this is running Node.js from the package.json file
+
 
 ---
 
@@ -61,12 +63,12 @@ We know that there is a library in Node.js that we can use to be able to interac
 
 So what we can do is to import (or in this case "require") the fs library and look for a method that we can use to be able to read file contents. Upon some searching, I found that there is a method called "readFile", so let us put all of this together and input the payload `require('fs').readFile('/flag.txt')`.
 
-![](assets/uploads/htb-web-jscalc/2024-01-16 16_31_52.png)
+![](/assets/uploads/htb-web-jscalc/2024-01-16 16_31_52.png)
 
 So nothing happens... This means that there is probably something wrong with our input and it is not being processed correctly. So with more searching, there is a functionality called "readFileSync()" which will also read the file contents of a file and return us the output of the function. 
 
-![](assets/uploads/htb-web-jscalc/2024-01-16 16_34_01.png)
+![](/assets/uploads/htb-web-jscalc/2024-01-16 16_34_01.png)
 
 However as we can see, we are being returned an object and not particularly the value of the flag, so we use the "toString()" method to convert the object to human readable string. From all of this, we now get the flag!
 
-![](assets/uploads/htb-web-jscalc/2024-01-16 16_35_16.png)
+![](/assets/uploads/htb-web-jscalc/2024-01-16 16_35_16.png)
