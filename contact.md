@@ -4,7 +4,7 @@ layout: page
 permalink: /contact
 ---
 
-# Get in touch?
+# Get in touch with me using the form below
 
 <form>
   <input type="text" id="name" name="name" placeholder="name:" autocomplete="off">
@@ -14,4 +14,8 @@ permalink: /contact
 </form>
 <br>
 You may also send me an email at zw1tt3r1on@proton.me
-<br /><br />
+
+# Let us collaborate!
+- HackerOne: zw1tt3r1on@wearehackerone.com
+
+<br />
