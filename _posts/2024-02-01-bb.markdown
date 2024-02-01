@@ -17,7 +17,7 @@ In this blog post (as the title says already), I just want to share about my fir
 
 An Open Redirect is a type of web application security issue. It occurs when a web application or server uses an unvalidated user-submitted link to redirect the user to a given website or page. Basically from the words itself, you can REDIRECT a user to another website without any validation (OPENLY). 
 
-![](/assets/uploads/bb-my-first-ever-valid-bug-submitted/open redirect.png)
+![](/assets/uploads/bb-my-first-ever-valid-bug-submitted/open redirect.png | width=100)
 
 So with open redirect, an attacker can send phishing emails/messages to users that contains a link with the company's domain. However when the victim visits the link, he/she will then be redirected from the company' domain to the attacker’s site that may contain a form to retrieve user information such as usernames and passwords.
 
