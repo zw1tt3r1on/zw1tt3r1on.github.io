@@ -9,10 +9,10 @@ permalink: /
  /_ \/\/ |  |_  |_ _) |   | (_) | | 
 <font size=3>                                                                    
 Welcome to zw1tt3r1on's landing page (GNU/Linux 2.6.19-48-generic x86_64)
- * Blog:	https://zw1tt3r1on.github.io/blog
- * CVEs:  https://zw1tt3r1on.github.io/cves
- * About:	https://zw1tt3r1on.github.io/about
- * Contact:	https://zw1tt3r1on.github.io/contact
+ * Blog:      https://zw1tt3r1on.github.io/blog
+ * CVEs:      https://zw1tt3r1on.github.io/cves
+ * About:     https://zw1tt3r1on.github.io/about
+ * Contact:   https://zw1tt3r1on.github.io/contact
   
   System information as of Fri 12 Jun 1987 23:39:36 PM UTC
   System load:  0.15               Processes:              153
