@@ -17,16 +17,24 @@ In this blog post (as the title says already), I just want to share about my fir
 
 An Open Redirect is a type of web application security issue. It occurs when a web application or server uses an unvalidated user-submitted link to redirect the user to a given website or page. Basically from the words itself, you can REDIRECT a user to another website without any validation (OPENLY). 
 
-
 <center><img src="/assets/uploads/bb-my-first-ever-valid-bug-submitted/open redirect.png" width="70%"></center>
-
 
 So with open redirect, an attacker can send phishing emails/messages to users that contains a link with the company's domain. However when the victim visits the link, he/she will then be redirected from the company' domain to the attacker’s site that may contain a form to retrieve user information such as usernames and passwords.
 
 # > Bug Details
 
-So how did I find this bug? Well, I first performed subdomain enumeration on the target and found just one subdomain for this writeup lets just say it is https://randomsubdomain.REDACTED.com/. Initially this subdomain was not very exciting as there was nothing popping on the page that looks interesting and not really many parameters to try and input anything. However when I appended a URL to this subdomain, I get redirected to that URL. For example, when I append "google.com" (https://randomsubdomain.REDACTED.com/google.com) I get redirected to google.com! 
+So how did I find this bug? Well, I first performed subdomain enumeration on the target and found just one subdomain for this writeup lets just say it is https://randomsubdomain.REDACTED.com/. Initially this subdomain was not very exciting as there was nothing popping on the page that looks interesting and not really many parameters to try and input anything. However when I appended a URL to this subdomain, I get redirected to that URL.
 
-Finding this, I immediately opened my HackerOne account all excited and I just made a very very rough report and immediately clicked the submit button! After a few hours, I have received an email notification from a HackerOne triager that has successfully validated my report and has changed the status of the report to "Pending program review". 
+For example, when I append "google.com" (https://randomsubdomain.REDACTED.com/google.com) I get redirected to https://google.com/! 
 
-After a week, I received an email notification from the program's cybersecurity team and they have changed the status of my report was to triaged
+Finding this, I immediately opened my HackerOne account all excited and I just made a very very rough report and immediately clicked the submit button! After a few hours, I have received an email notification from a HackerOne triager that my report was successfully validated and the status of the report was changed to "Pending program review". 
+
+<img src="/assets/uploads/bb-my-first-ever-valid-bug-submitted/pending-program-review-comment.png">
+
+After about a week, I received another email notification from the program's cybersecurity team and they have changed the status of my report was to triaged.
+
+<img src="/assets/uploads/bb-my-first-ever-valid-bug-submitted/triage-comment.png">
+
+As of today, my report is still tagged as triaged as I (think) that there are other reports that they are prioritizing to fix. 
+
+<img src="/assets/uploads/bb-my-first-ever-valid-bug-submitted/hackerone-status-report.png">
