@@ -2,7 +2,7 @@
 layout: post
 title:  "[Bug Bounty] My First Ever Valid Bug Submitted!"
 date:   2024-02-01
-categories: Bug Bounty
+categories: Bug-Bounty
 ---
 
 # > Quick Background Story

@@ -6,6 +6,7 @@ url: "https://zw1tt3r1on.github.io"
 header_pages:
   - index.md
   - blog.md
+  - cves.md
   - about.md
   - contact.md
 
