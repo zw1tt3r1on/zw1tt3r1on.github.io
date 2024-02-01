@@ -12,7 +12,7 @@ In the mysterious depths of the digital sea, a specialized JavaScript calculator
 
 Upon visiting the IP address and port provided, we are given a super secure javascript calculator that uses the eval() function. The big hint here is that the calculator uses the eval() function which could be vulnerable to some command injection.
 
-![](/assets/uploads/htb-web-jscalc/2024-01-16 15_36_01.png)
+<img src="/assets/uploads/htb-web-jscalc/2024-01-16 15_36_01.png" width="70%">
 
 Looking at the source code we can verify that we are indeed just passing everything to the eval() function.
 
