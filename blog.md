@@ -8,12 +8,12 @@ permalink: /blog/
 {%- if site.posts.size > 0 -%}
   <ul>
     {%- for post in site.posts -%}
+      {%- if post.categories contains "CTF" -%}
       <li>
-        {%- if post.categories contains "CTF" -%}
-          {%- assign date_format = "%m-%d-%Y" -%}
-          [ {{ post.date | date: date_format }} ] <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        {%- endif -%}
+        {%- assign date_format = "%m-%d-%Y" -%}
+        [ {{ post.date | date: date_format }} ] <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
       </li>
+      {%- endif -%}
     {%- endfor -%}
   </ul>
 {%- endif -%}
@@ -22,12 +22,12 @@ permalink: /blog/
 {%- if site.posts.size > 0 -%}
   <ul>
     {%- for post in site.posts -%}
+      {%- if post.categories contains "Bug-Bounty" -%}
       <li>
-        {%- if post.categories contains "Bug-Bounty" -%}
-          {%- assign date_format = "%m-%d-%Y" -%}
-          [ {{ post.date | date: date_format }} ] <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        {%- endif -%}
+        {%- assign date_format = "%m-%d-%Y" -%}
+        [ {{ post.date | date: date_format }} ] <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
       </li>
+      {%- endif -%}
     {%- endfor -%}
   </ul>
 {%- endif -%}
