@@ -29,12 +29,12 @@ For example, when I append "google.com" (https://randomsubdomain.REDACTED.com/go
 
 Finding this, I immediately opened my HackerOne account all excited and I just made a very very rough report and immediately clicked the submit button! After a few hours, I have received an email notification from a HackerOne triager that my report was successfully validated and the status of the report was changed to "Pending program review". 
 
-<img src="/assets/uploads/bb-my-first-ever-valid-bug-submitted/pending-program-review-comment.png">
+<center><img src="/assets/uploads/bb-my-first-ever-valid-bug-submitted/pending-program-review-comment.png"></center>
 
 After about a week, I received another email notification from the program's cybersecurity team and they have changed the status of my report was to triaged.
 
-<img src="/assets/uploads/bb-my-first-ever-valid-bug-submitted/triage-comment.png">
+<center><img src="/assets/uploads/bb-my-first-ever-valid-bug-submitted/triage-comment.png"></center>
 
 As of today, my report is still tagged as triaged as I (think) that there are other reports that they are prioritizing to fix. 
 
-<img src="/assets/uploads/bb-my-first-ever-valid-bug-submitted/hackerone-status-report.png">
+<center><img src="/assets/uploads/bb-my-first-ever-valid-bug-submitted/hackerone-status-report.png"></center>
