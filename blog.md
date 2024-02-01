@@ -8,11 +8,11 @@ permalink: /blog/
   <ul>
     {%- for post in site.posts -%}
       <li>
-        {%- if post.categories == "CTF" -%}
+        {%- if post.categories contains "CTF" -%}
           <h1> CTF </h1>
           {%- assign date_format = "%m-%d-%Y" -%}
           [ {{ post.date | date: date_format }} ] <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-        {%- elsif post.categories == "Bug-Bounty" -%}
+        {%- elsif post.categories contains "Bug-Bounty" -%}
           <h1> Bug Bounty </h1>
           {%- assign date_format = "%m-%d-%Y" -%}
           [ {{ post.date | date: date_format }} ] <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
