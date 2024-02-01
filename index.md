@@ -10,6 +10,7 @@ permalink: /
 <font size=3>                                                                    
 Welcome to zw1tt3r1on's landing page (GNU/Linux 2.6.19-48-generic x86_64)
  * Blog:	https://zw1tt3r1on.github.io/blog
+ * CVEs:  https://zw1tt3r1on.github.io/cves
  * About:	https://zw1tt3r1on.github.io/about
  * Contact:	https://zw1tt3r1on.github.io/contact
   
