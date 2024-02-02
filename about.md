@@ -20,6 +20,7 @@ I am zw1tt3r1on and I am currently working as a security consultant at ███
 
 ## # find -type f -name "Certifications"
 
-- eLearnSecurity Web Application Penetration Tester (eWPT)
+- eLearnSecurity Mobile Application Penetration Tester (eMAPT)
 - eLearnSecurity Web Application Penetration Tester Extreme (eWPTXv2)
 - eLearnSecurity Certified Professional Penetration Tester (eCPPTv2)
+- eLearnSecurity Web Application Penetration Tester (eWPT)
