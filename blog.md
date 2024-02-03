@@ -4,11 +4,11 @@ layout: page
 permalink: /blog/
 ---
 
-<h1> CTF </h1>
+<h1> Bug Bounty </h1>
 {%- if site.posts.size > 0 -%}
   <ul>
     {%- for post in site.posts -%}
-      {%- if post.categories contains "CTF" -%}
+      {%- if post.categories contains "Bug-Bounty" -%}
       <li>
         {%- assign date_format = "%m-%d-%Y" -%}
         [ {{ post.date | date: date_format }} ] <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
@@ -18,11 +18,11 @@ permalink: /blog/
   </ul>
 {%- endif -%}
 
-<h1> Bug Bounty </h1>
+<h1> CTF </h1>
 {%- if site.posts.size > 0 -%}
   <ul>
     {%- for post in site.posts -%}
-      {%- if post.categories contains "Bug-Bounty" -%}
+      {%- if post.categories contains "CTF" -%}
       <li>
         {%- assign date_format = "%m-%d-%Y" -%}
         [ {{ post.date | date: date_format }} ] <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
