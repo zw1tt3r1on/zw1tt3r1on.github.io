@@ -11,4 +11,4 @@ I will not make this blog post long as I just want to extend my gratitude to my 
 
 Cheers to more learnings and more reported bugs in 2024!
 
-<img src='/assets/uploads/rank16-hackerone-ph/hackerone-rank16.jpeg' width=80%>
+<img src='/assets/uploads/rank16-hackerone-ph/hackerone-rank16.jpeg' width="80%">
