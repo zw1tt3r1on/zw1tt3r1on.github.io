@@ -9,7 +9,7 @@ Some time back, I  received an email from HackerOne congratulating me on reachin
 
 <center><img src="/assets/uploads/hackerone-750-reputation/hackerone-750-rep-email.png" width="100%"></center>
 
-I received my package after about a month and a half due to some shipping issues within the country. It included a HackerOne tshirt (ofcourse), and a HackerOne laptop camera cover. 
+I received my package after about a month and a half due to some shipping issues within the country. It included a HackerOne tshirt (ofcourse), a HackerOne sticker and a HackerOne laptop camera cover. 
 
 <center><img src="/assets/uploads/hackerone-750-reputation/hackerone-750-rep-package.jpg" width="80%"></center>
 
