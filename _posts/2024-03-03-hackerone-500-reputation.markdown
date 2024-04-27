@@ -17,4 +17,4 @@ Fast forward to about a month, I have finally received my HackerOne 500 reputati
 
 To me, these swags are not just a pair of socks and an organic tote bag. They symbolize a small for me and my career and acknowledge the countless hours that I have dedicated to honing my skills in different fields of cybersecurity.
 
-Next Goal: 750 Reputation !! 
+Next Goal: 750 Reputation - HackerOne Tshirt !! 
