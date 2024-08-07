@@ -36,21 +36,24 @@ Testing default weak credentials for this, we discover that the username:passwor
 
 Upon logging on the web application, we discover that this is Nibbleblog version 4.0.3
 
-![](image-2.png)
+![](/assets/uploads/htb-nibbles/image-2.png)
 
 Searching for vulnerabilities on this, we see that there is an RCE via unrestricted file upload on the "My image" plugin. 
 
 With this, let us just upload a php reverse shell and visit the path /nibbleblog/content/private/plugins/my_image/image.php to get our initial access
 
-![](image-3.png)
+![](/assets/uploads/htb-nibbles/image-3.png)
 
-![](image-4.png)
+![](/assets/uploads/htb-nibbles/image-4.png)
 
 Looking for privilege escalation possibilities, we see that we have sudo privileges on a file called monitor.sh and it should be on /home/nibbler/personal/stuff/monitor.sh
 
-
 With this, we can just overwrite the contents of the monitor.sh file and run the monitor.sh file as root to get root access 
 
-![](image-5.png)
+![](/assets/uploads/htb-nibbles/image-5.png)
 
-![](image-6.png)
+![](/assets/uploads/htb-nibbles/image-6.png)
+
+> Pwned!
+
+![](/assets/uploads/htb-nibbles/image-7.png)
