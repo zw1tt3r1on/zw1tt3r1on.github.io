@@ -54,6 +54,6 @@ With this, we can just overwrite the contents of the monitor.sh file and run the
 
 ![](/assets/uploads/htb-nibbles/image-6.png)
 
-> Pwned!
+# > Pwned!
 
 ![](/assets/uploads/htb-nibbles/image-7.png)
