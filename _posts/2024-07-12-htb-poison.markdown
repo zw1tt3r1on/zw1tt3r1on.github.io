@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[HTB] Poison"
-date:   2024-07-15
+date:   2024-07-12
 categories: CTF
 ---
 
@@ -70,8 +70,3 @@ Connecting to vnc using the secret file that we got from the zip file and we get
 ![](/assets/uploads/htb-poison/image-8.png)
 
 ![](/assets/uploads/htb-poison/image-9.png)
-
-
-# > Pwned! 
-
-![](/assets/uploads/htb-poison/image-10.png)
