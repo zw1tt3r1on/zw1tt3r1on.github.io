@@ -61,7 +61,7 @@ Using this exploit, we generate an image to read the /etc/passwd and upload it t
 
 ![](/assets/uploads/htb-pilgrimage/image-3.png)
 
-Now let us download the uploaded file and use the command "identify -verbose <filename.jpeg>" 
+Now let us download the uploaded file and use the command "identify -verbose filename.jpeg" 
 
 ![alt text](/assets/uploads/htb-pilgrimage/image-4.png)
 
