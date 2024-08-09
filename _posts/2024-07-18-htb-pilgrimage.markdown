@@ -43,7 +43,7 @@ Visiting the web application, we see that there is a file upload functionality w
 
 However upon trying to upload a php web or reverse shell, and trying to bypass the file upload functioanlity using different kinds of encoding or file type manipulation, I still did not get any shell because it is being converted to a .jpeg image somehow.  
 
-With this, I go back to the drawing bored and fuzzed the directories and we see that there is a .git directory
+With this, I go back to the drawing board and fuzzed the directories of the web application and we see that there is a .git directory
 
 ![alt text](/assets/uploads/htb-pilgrimage/image.png)
 
