@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[HTB] Nibbler"
-date:   2024-07-08
+date:   2024-03-08
 categories: CTF
 ---
 

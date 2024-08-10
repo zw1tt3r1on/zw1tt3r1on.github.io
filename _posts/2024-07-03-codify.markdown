@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[HTB] Codify"
-date:   2024-07-18
+date:   2024-07-03
 categories: CTF
 ---
 
@@ -39,11 +39,11 @@ Nmap done: 1 IP address (1 host up) scanned in 1.49 seconds
 
 Seeing that there is port 80 open, add codify.htb to our /etc/hosts and look at the web application
 
-![alt text](image.png)
+![alt text](/assets/uploads/htb-codify/image.png)
 
 Seeing that this is a web application that we can test our node.js code, maybe we can also execute a node.js script for a reverse shell such as the one provided here https://gist.github.com/secoats/44b9b42920ac4a825e54e7310303cfdb, and just setup a listener on port 5555. BUT upon trying this, it doesnt work because the module "child_process" is not allowed.
 
-![alt text](image-1.png)
+![alt text](/assets/uploads/htb-codify/image-1.png)
 
 So maybe this machine is not that straightforward. Looking more into the web application and we see that it is using vm2 to prevent harmful code being executed on the system. Researching about this revealed a way to bypass the vm2 protection - https://gist.github.com/leesh3288/381b230b04936dd4d74aaf90cc8bb244
 
@@ -79,19 +79,19 @@ console.log(vm.run(code));
 
 And now we can just connect to it via ssh
 
-![alt text](image-3.png)
+![alt text](/assets/uploads/htb-codify/image-3.png)
 
 So investigating more on the machine, we see that there is another user called joshua, so probably we need to get a way to login to his account. Enumerating more on the machine, we see that there is a file in /var/www/contact called tickets.db and if we look at it, we see that it contains joshua's password hash which we can crack locally using john the ripper
 
-![alt text](image-2.png)
+![alt text](/assets/uploads/htb-codify/image-2.png)
 
-![alt text](image-4.png)
+![alt text](/assets/uploads/htb-codify/image-4.png)
 
 Now that we have joshua's password, we can just login to his account via ssh and get the user flag
 
-![alt text](image-5.png)
+![alt text](/assets/uploads/htb-codify/image-5.png)
 
 Looking for privilege escalation pathways, we check his sudo privileges and we see that we can run the /opt/scripts/mysql-backup.sh script
 
-![alt text](image-6.png)
+![alt text](/assets/uploads/htb-codify/image-6.png)
 

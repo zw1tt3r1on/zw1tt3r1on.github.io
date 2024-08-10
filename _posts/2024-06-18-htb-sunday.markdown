@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[HTB] Sunday"
-date:   2024-07-16
+date:   2024-06-18
 categories: CTF
 ---
 
