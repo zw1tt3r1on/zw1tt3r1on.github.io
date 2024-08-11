@@ -95,3 +95,28 @@ Looking for privilege escalation pathways, we check his sudo privileges and we s
 
 ![alt text](/assets/uploads/htb-codify/image-6.png)
 
+Reading closely what this code do, this essentially asks for the db root's password and checks it with the password that can be found on /root/.creds (which we do not have any access to) and if it is correct, it creates a backup directory and backs up the contents of the database.
+
+The issue here is that the comparison that is being used to check if the user entered password is within [[ ]] which is just a partial match based on a pattern rather than a full match. So for example [[ "aa*" == "aaa"]] will return true since the * represents a wildcard. 
+
+Then the script passes the database's password from the /root/.creds file instead of using the password that the user entered as detailed on this line
+
+---
+
+/usr/bin/mysqldump --force -u "$DB_USER" -h 0.0.0.0 -P 3306 -p"$DB_PASS" "$db/gzip
+
+---
+
+With these in mind, we can just run pspy on the machine to monitor the running processes, and run the script and enter the password "****" which will essentially match the password string.
+
+![alt text](/assets/uploads/htb-codify/image-7.png)
+
+![alt text](/assets/uploads/htb-codify/image-8.png)
+
+Now we see that the database's password is "kljh12k3jhaskjh12kjh3" and we can access the database
+
+![alt text](/assets/uploads/htb-codify/image-9.png)
+
+However upon investigating the contents of the database, there seems to not have any content related to the root's password. With this I just tried to change user to root and use the password "kljh12k3jhaskjh12kjh3" and viola!
+
+![alt text](/assets/uploads/htb-codify/image-10.png)
