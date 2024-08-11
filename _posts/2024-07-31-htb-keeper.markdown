@@ -9,6 +9,28 @@ As usual let us start with our nmap scan
 
 ---
 
+└─# nmap -vv 10.10.11.227
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-08-11 10:22 EDT
+Initiating Ping Scan at 10:22
+Scanning 10.10.11.227 [4 ports]
+Completed Ping Scan at 10:22, 0.07s elapsed (1 total hosts)
+Initiating SYN Stealth Scan at 10:22
+Scanning keeper.htb (10.10.11.227) [1000 ports]
+Discovered open port 22/tcp on 10.10.11.227
+Discovered open port 80/tcp on 10.10.11.227
+Completed SYN Stealth Scan at 10:22, 0.77s elapsed (1000 total ports)
+Nmap scan report for keeper.htb (10.10.11.227)
+Host is up, received reset ttl 63 (0.049s latency).
+Scanned at 2024-08-11 10:22:32 EDT for 1s
+Not shown: 998 closed tcp ports (reset)
+PORT   STATE SERVICE REASON
+22/tcp open  ssh     syn-ack ttl 63
+80/tcp open  http    syn-ack ttl 63
+
+Read data files from: /usr/bin/../share/nmap
+Nmap done: 1 IP address (1 host up) scanned in 0.96 seconds
+           Raw packets sent: 1004 (44.152KB) | Rcvd: 1001 (40.048KB)
+                                                                                                                     
 
 ---
 
