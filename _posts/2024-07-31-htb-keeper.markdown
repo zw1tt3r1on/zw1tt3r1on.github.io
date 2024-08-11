@@ -40,6 +40,8 @@ Seeing that only port 22 and 80 are open, this means we would highly likely be e
 
 So now visiting tickets.keeper.htb, we see that we have a login page for Request Tracker. Googling on possible default credentials and we see that the default credentials are root:password
 
+![alt text](/assets/uploads/htb-keeper/image-9.png)
+
 ![alt text](/assets/uploads/htb-keeper/image-1.png)
 
 Now looking around the request tracker web application, we see something about a "keepass program"
@@ -77,8 +79,6 @@ So let us now open this file using keepass and enter "rødgrød med fløde" as t
 ![alt text](/assets/uploads/htb-keeper/image-8.png)
 
 Looking further, we see some putty ssh key for the root user, maybe this would work... So let us just copy this and save as a ppk file and use configure putty to connect to the machine using the ssh key
-
-![](/assets/uploads/htb-keeper/image-9.png)
 
 ![alt text](/assets/uploads/htb-keeper/image-10.png)
 
