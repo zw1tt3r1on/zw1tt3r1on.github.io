@@ -44,7 +44,7 @@ So now visiting tickets.keeper.htb, we see that we have a login page for Request
 
 ![alt text](/assets/uploads/htb-keeper/image-1.png)
 
-Now looking around the request tracker web application, we see something about a "keepass program"
+After logging in to the web application and we look around and we see something about a "keepass program"
 
 ![alt text](/assets/uploads/htb-keeper/image-5.png)
 
@@ -78,7 +78,7 @@ So let us now open this file using keepass and enter "rødgrød med fløde" as t
 
 ![alt text](/assets/uploads/htb-keeper/image-8.png)
 
-Looking further, we see some putty ssh key for the root user, maybe this would work... So let us just copy this and save as a ppk file and use configure putty to connect to the machine using the ssh key
+Looking further, we see some putty ssh key for the root user, maybe this would work... So let us just copy this and save as a ppk file and configure putty to connect to the machine using the ssh key
 
 ![alt text](/assets/uploads/htb-keeper/image-10.png)
 
