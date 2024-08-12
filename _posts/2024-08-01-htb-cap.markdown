@@ -1,0 +1,55 @@
+---
+layout: post
+title:  "[HTB] Cap"
+date:   2024-08-01
+categories: CTF
+---
+
+As usual let us start with our nmap scan
+
+---
+
+└─# nmap 10.10.10.245    
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-08-12 10:29 EDT
+Nmap scan report for 10.10.10.245
+Host is up (0.14s latency).
+Not shown: 997 closed tcp ports (reset)
+PORT   STATE SERVICE
+21/tcp open  ftp
+22/tcp open  ssh
+80/tcp open  http
+
+---
+
+
+Seeing that there is ftp open, we try to login anonymously but seems like anonymous login is not enabled
+
+![alt text](/assets/uploads/htb-cap/image.png)
+
+Investigating on the web application, we see that there seems to be some security snapshots that are being stored and downloaded
+
+![alt text](/assets/uploads/htb-cap/image-1.png)
+
+Seeing that it uses incremental data, maybe we can visit /data/0, which we do and we can download the pcap file
+
+![alt text](/assets/uploads/htb-cap/image-2.png)
+
+Opening this pcap file, we see the traffic being sent to the server and since FTP traffic is unencrypted, we can see nathan's credentials here
+
+![alt text](/assets/uploads/htb-cap/image-3.png)
+
+So with this, we can just login to the ftp server as nathan and get the user flag
+
+![alt text](/assets/uploads/htb-cap/image-4.png)
+
+Or we can also just ssh to the machine using nathan's credentials and get the user flag
+
+![alt text](/assets/uploads/htb-cap/image-5.png)
+
+Looking for privilege escalation paths, we try and see the installed packages on the machine and we see that there is a vulnerable version of polkit
+
+![alt text](/assets/uploads/htb-cap/image-6.png)
+
+With this, we just download pwnkit on the machine and run it to get root and the root flag
+
+![alt text](/assets/uploads/htb-cap/image-7.png)
