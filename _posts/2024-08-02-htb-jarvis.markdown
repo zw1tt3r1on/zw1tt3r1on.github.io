@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[HTB] Cap"
+title:  "[HTB] Jarvis"
 date:   2024-08-02
 categories: CTF
 ---
