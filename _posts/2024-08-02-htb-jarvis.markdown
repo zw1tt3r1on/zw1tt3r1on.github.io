@@ -67,8 +67,6 @@ However if we look at this, it is very difficult to bypass the checking of forbi
 
 ![alt text](/assets/uploads/htb-jarvis/image-7.png)
 
-![alt text](/assets/uploads/htb-jarvis/image-8.png)
-
 Now that we are the user pepper let us get the user flag and look if we can escalate to root.
 
 ![alt text](/assets/uploads/htb-jarvis/image-9.png)
