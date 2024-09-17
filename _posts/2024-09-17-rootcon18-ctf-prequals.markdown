@@ -20,7 +20,7 @@ Visiting the ip and port given to us, we see a login page. I initially tried ran
 
 Looking also at source, we see that there is a js file that contains a hardcoded password but upon trying this password on the login page, it still did not work. 
 
-![alt text](/assets/uploads/rootcon18-ctf-prequals/image-1.png)
+<img src='/assets/uploads/rootcon18-ctf-prequals/image-1.png' width="90%">
 
 So investigating more, we discovered that this web application is hosted on AWS, so we focused on that. We queried the version of the objects and then queried the contents of each of the versions and found the flag in one of them. 
 
