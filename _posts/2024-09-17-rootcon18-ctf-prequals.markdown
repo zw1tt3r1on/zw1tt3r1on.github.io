@@ -16,7 +16,7 @@ Visiting the ip and port given to us, we see a login page. I initially tried ran
 
 ![alt text](/assets/uploads/rootcon18-ctf-prequals/image.png)
 
-<img src='/assets/uploads/rootcon18-ctf-prequals/image-2.png' width="70%">
+<img src='/assets/uploads/rootcon18-ctf-prequals/image-2.png' width="80%">
 
 Looking also at source, we see that there is a js file that contains a hardcoded password but upon trying this password on the login page, it still did not work. 
 
@@ -84,7 +84,7 @@ After downloading the given file, I tried and extracting the contents of it and 
 
 So after running it for a while, my script showed that the last file is empty. I initially thought that this challenge might have been broken since there is no flag whatsoever.
 
-<img src='/assets/uploads/rootcon18-ctf-prequals/image-5.png' width="70%">
+<img src='/assets/uploads/rootcon18-ctf-prequals/image-5.png' width="80%">
 
 However, we realized that the names of the folders might be hex encoded since they only contain the characters 0-9 and a-f. So collecting these and passing it through cyberchef and hex decoding it did NOT get us anywhere :(
 
@@ -92,7 +92,7 @@ However, we realized that the names of the folders might be hex encoded since th
 
 It was then further discovered that the output should be first reversed before being hex decoded and we get the flag from there
 
-<img src='/assets/uploads/rootcon18-ctf-prequals/image-7.png' width="70%">
+<img src='/assets/uploads/rootcon18-ctf-prequals/image-7.png' width="80%">
 
 # I Can See The End
 
@@ -102,11 +102,11 @@ This one was a bit tricky since the only thing that was provided to us was a png
 
 Looking at this png and checking different variations of it did not provide any progress.
 
-![alt text](/assets/uploads/rootcon18-ctf-prequals/image-8.png)
+<img src='/assets/uploads/rootcon18-ctf-prequals/image-8.png' width="90%">
 
 Later on, we have discovered that there is this tool called zsteg that detects stegano-hidden data specifically in PNG & BMP, which exactly fits our file! Running "zsteg -a -l 0 see.png" command gave us some output that kinda resembles the flag 
 
-![alt text](/assets/uploads/rootcon18-ctf-prequals/image-14.png)
+<img src='/assets/uploads/rootcon18-ctf-prequals/image-14.png' width="90%">
 
 Trying to decipher/guess this, I have came up with 
 - lianl ghaib
@@ -143,12 +143,12 @@ Initially it is looking for a shared library called "libcrypto.so.1.1", so we fe
 
 After that, it looks for the right permissions, but we do not know what permissions is it looking for, so we try and reverse engineer this binary using ghidra
 
-<img src='/assets/uploads/rootcon18-ctf-prequals/1image-1.png' width="80%">
+<img src='/assets/uploads/rootcon18-ctf-prequals/1image-1.png' width="90%">
 
 We see here that we need to first be running as the user Beelzebub with password ILOVEROOTCON
 
 ![alt text](/assets/uploads/rootcon18-ctf-prequals/1image-3.png)
-<img src='/assets/uploads/rootcon18-ctf-prequals/1image-5.png' width="70%">
+<img src='/assets/uploads/rootcon18-ctf-prequals/1image-5.png' width="80%">
 
 Next we see that we need to have the following 
 - uid 0x1b39 (6969 in decimal) or else it would say "wrong user ID"
