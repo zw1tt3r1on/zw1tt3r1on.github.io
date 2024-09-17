@@ -106,16 +106,17 @@ Looking at this png and checking different variations of it did not provide any 
 
 Later on, we have discovered that there is this tool called zsteg that detects stegano-hidden data specifically in PNG & BMP, which exactly fits our file! Running "zsteg -a -l 0 see.png" command gave us some output that kinda resembles the flag 
 
----
+```
 
 <--snipped-->
 
- RRCCCC8{{l114nnLL_GGhaaa11bbRRC11111888{ll1s44nn@@@@@L_GGGGh111bRCCCC1{{{ll11sss44n__@@LLGGha11RRRCC18{{{l111ssnnn__@@___Ghha11bRRC18{{{ll1s4nn_@LLL_GGGhhhaa1bbbRRC111{{{ll11s444___@@@@LGGhhaaa1bRC1188{{lll1sn__LLLL__Ghhhha1bbRCC11188{{{ll444nn__@@L_GGhhh1bRCCC1188{{ll111ssss4n__L___ha111bbRC18{{{{{l1144nnn__@LL__GGhha1bbbRCC118{ll11snn_@@@LLL_GGGhhhaa11bRRCC1{lllssss44n@@@@LLL__GGha11bbRC18888{{lsss44nnn@__GGhhaaaaa1RRR1888{llss444nn___@LGGGhhhbRCC118lll1s4n___@L_GGGaaa111bbbRCC188{l1ssnnn_@LL_GGGhhha111bbbRRCCCC1118{l111s444nnn@LL_GGh11bbC111{{{l1sss444n_@@L___GGGhaaa11bbRCCCC1188{ll1ss4nn__@@@LL_hhaabbRRRC111{ll111ss4444nn__@L___GGhh1bbb!}}}"
-"}}!!!b11aahhhhGGG___LL@@___nn44ss11lll{{81CCCRbb111ahhhhGGGG_@@@@@_nnn444sss1l{8881111CCRbb1aahG_____LLL@@__nssss1lll{{88CCRRb111ahhGGG___L@@@_n44ssslll{{88811CCCRb111ahG___L@@__nn4444s11lll{8888111CRRbb11ahGGG___LL@nnn4sss111l{{{{8881CCRRRbbbb11ahGGG___L@@__n44ss11ll{8881CCCRb11aaahhhhGG__LLL@nnnnn44ss1llll{{8111CCRRRbbb1aahhhhG__LLL@__nnn444s11ll{{{88CCCRbaaahGGG_LLL@___n4s1l{{{{11CCbbb11ahhhGGLL@@_nn4444ss11ll{8881RRbbb11aaaaahhhGGGG__LL@____nn44ss{888811CCRRRbb1aaaGGG__LL@@__n4444sss1lll{{881CCCCRRbbb111ahhGG_LL@@nnn44444s111ll{8811CRRbb111ahhG__L@__nnn4sssss11l{{11CCRRRb111aahGG_____LL@__n44ss111lll{{{811CRRb111ahhGG___LLL@n44444ss111ll{{{8881111RRbb1aahhhGG__LL@@__nnn44ss1ll{8811CCRRRRb1111aahhGGG____L@@n44ssss11ll8811CCCRb111ahhGG_LLL@@@nn444ss11lll{{88811CCRR 
+ RRCCCC8{{l114nnLL_GGhaaa11bbRRC11111888{ll1s44nn@@@@@L_GGGGh111bRCCCC1{{{ll11sss44n__@@LLGGha11RRRCC18{{{l111ssnnn__@@___Ghha11bRRC18{{{ll1s4nn_@LLL_GGGhhhaa1bbbRRC111{{{ll11s444___@@@@LGGhhaaa1bRC1188{{lll1sn__LLLL__Ghhhha1bbRCC11188{{{ll444nn__@@L_GGhhh1bRCCC1188{{ll111ssss4n__L___ha111bbRC18{{{{{l1144nnn__@LL__GGhha1bbbRCC118{ll11snn_@@@LLL_GGGhhhaa11bRRCC1{lllssss44n@@@@LLL__GGha11bbRC18888{{lsss44nnn@__GGhhaaaaa1RRR1888{llss444nn___@LGGGhhhbRCC118lll1s4n___@L_GGGaaa111bbbRCC188{l1ssnnn_@LL_GGGhhha111bbbRRCCCC1118{l111s444nnn@LL_GGh11bbC111{{{l1sss444n_@@L___GGGhaaa11bbRCCCC1188{ll1ss4nn__@@@LL_hhaabbRRRC111{ll111ss4444nn__@L___GGhh1bbb!}}}
+
+}}!!!b11aahhhhGGG___LL@@___nn44ss11lll{{81CCCRbb111ahhhhGGGG_@@@@@_nnn444sss1l{8881111CCRbb1aahG_____LLL@@__nssss1lll{{88CCRRb111ahhGGG___L@@@_n44ssslll{{88811CCCRb111ahG___L@@__nn4444s11lll{8888111CRRbb11ahGGG___LL@nnn4sss111l{{{{8881CCRRRbbbb11ahGGG___L@@__n44ss11ll{8881CCCRb11aaahhhhGG__LLL@nnnnn44ss1llll{{8111CCRRRbbb1aahhhhG__LLL@__nnn444s11ll{{{88CCCRbaaahGGG_LLL@___n4s1l{{{{11CCbbb11ahhhGGLL@@_nn4444ss11ll{8881RRbbb11aaaaahhhGGGG__LL@____nn44ss{888811CCRRRbb1aaaGGG__LL@@__n4444sss1lll{{881CCCCRRbbb111ahhGG_LL@@nnn44444s111ll{8811CRRbb111ahhG__L@__nnn4sssss11l{{11CCRRRb111aahGG_____LL@__n44ss111lll{{{811CRRb111ahhGG___LLL@n44444ss111ll{{{8881111RRbb1aahhhGG__LL@@__nnn44ss1ll{8811CCRRRRb1111aahhGGG____L@@n44ssss11ll8811CCCRb111ahhGG_LLL@@@nn444ss11lll{{88811CCRR
 
 <--snipped-->
 
----
+```
 
 Trying to decipher/guess this, I have came up with 
 - lianl ghaib
