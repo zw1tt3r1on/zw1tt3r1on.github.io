@@ -84,7 +84,7 @@ After downloading the given file, I tried and extracting the contents of it and 
 
 So after running it for a while, my script showed that the last file is empty. I initially thought that this challenge might have been broken since there is no flag whatsoever.
 
-<img src='/assets/uploads/rootcon18-ctf-prequals/image-5.png' width="80%">
+<img src='/assets/uploads/rootcon18-ctf-prequals/image-5.png' width="90%">
 
 However, we realized that the names of the folders might be hex encoded since they only contain the characters 0-9 and a-f. So collecting these and passing it through cyberchef and hex decoding it did NOT get us anywhere :(
 
@@ -92,7 +92,7 @@ However, we realized that the names of the folders might be hex encoded since th
 
 It was then further discovered that the output should be first reversed before being hex decoded and we get the flag from there
 
-<img src='/assets/uploads/rootcon18-ctf-prequals/image-7.png' width="80%">
+<img src='/assets/uploads/rootcon18-ctf-prequals/image-7.png' width="90%">
 
 # I Can See The End
 
