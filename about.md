@@ -20,6 +20,9 @@ I am zw1tt3r1on and I am currently working as a security consultant at ███
 
 ## # find -type f -name "Certifications"
 
+- Burp Suite Certified Practitioner (BSCP)
+- HTB Certified Penetration Testing Specialist (HTB CPTS)
+- Altered Security Certified Red Team Professional (CRTP)
 - eLearnSecurity Mobile Application Penetration Tester (eMAPT)
 - eLearnSecurity Web Application Penetration Tester Extreme (eWPTXv2)
 - eLearnSecurity Certified Professional Penetration Tester (eCPPTv2)
