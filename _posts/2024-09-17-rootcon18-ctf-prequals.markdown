@@ -84,7 +84,7 @@ After downloading the given file, I tried and extracting the contents of it and 
 
 So after running it for a while, my script showed that the last file is empty. I initially thought that this challenge might have been broken since there is no flag whatsoever.
 
-<img src='/assets/uploads/rootcon18-ctf-prequals/image-5.png' width="90%">
+<img src='/assets/uploads/rootcon18-ctf-prequals/image-5.png' width="95%">
 
 However, we realized that the names of the folders might be hex encoded since they only contain the characters 0-9 and a-f. So collecting these and passing it through cyberchef and hex decoding it did NOT get us anywhere :(
 
@@ -116,6 +116,7 @@ Trying to decipher/guess this, I have came up with
 - and many more... 
 
 Searching about this thing, I found this https://dune.fandom.com/wiki/Lisan_al_Gaib
+
 So at this point, it was just about finding the right combination of characters and we get the flag: RC18{l1s4n_@L_Ga1b!}  
 
 # Rock Paper Scissors
@@ -145,7 +146,7 @@ After that, it looks for the right permissions, but we do not know what permissi
 
 <img src='/assets/uploads/rootcon18-ctf-prequals/1image-1.png' width="90%">
 
-We see here that we need to first be running as the user Beelzebub with password ILOVEROOTCON
+We see here that we need to first be running as the user beelzebub with password ILOVEROOTCON
 
 ![alt text](/assets/uploads/rootcon18-ctf-prequals/1image-3.png)
 <img src='/assets/uploads/rootcon18-ctf-prequals/1image-5.png' width="80%">
