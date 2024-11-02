@@ -20,6 +20,7 @@ I am zw1tt3r1on and I am currently working as a security consultant at ███
 
 ## # find -type f -name "Certifications"
 
+- Offensive Security Certified Professional (OSCP)
 - Burp Suite Certified Practitioner (BSCP)
 - HTB Certified Penetration Testing Specialist (HTB CPTS)
 - Altered Security Certified Red Team Professional (CRTP)
